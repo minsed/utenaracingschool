@@ -48,5 +48,9 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
-  ],
+    "gatsby-plugin-image",
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-postcss"
+  ]
 };
