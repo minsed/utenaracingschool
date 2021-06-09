@@ -1,0 +1,17 @@
+﻿.base-button {
+  background-color: transparent;
+  border: 0;
+  color: #505d68;
+  cursor: default;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: g.font-size('sm');
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  user-select: none;
+
+  &:not(div) {
+    cursor: pointer;
+  }
+}

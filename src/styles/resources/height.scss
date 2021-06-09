@@ -1,0 +1,16 @@
+﻿@function height($_key) {
+  $height-map: (
+          'header': 7.575rem,
+          'footer': 17.5rem,
+          'input': 2.5rem,
+  );
+
+  $_known-keys: 'header', 'footer', 'input';
+
+  @if not index($_known-keys, $_key) {
+    @error format-error-message($_key, 'height()', $_known-keys);
+    @return null;
+  }
+
+  @return map-get($height-map, $_key);
+}

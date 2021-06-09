@@ -1,0 +1,60 @@
+.latest-post-preview {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    width: 19rem;
+    height: 15rem;
+  }
+
+  &__categories {
+    margin-top: g.spacing('2xs');
+    display: flex;
+    flex-direction: row;
+    font-size: g.font-size('xs');
+  }
+
+  &__category {
+    background-color: #E8E8E8;
+    border-radius: 5px;
+
+    span {
+      font-weight: 400;
+      margin: g.spacing('xs') g.spacing('3xs');
+    }
+
+    &:not(:first-child) {
+      margin-left: g.spacing('4xs');
+    }
+  }
+
+  &__title {
+    font-family: 'Didact Gothic';
+    margin-top: g.spacing('3xs');
+    width: 19rem;
+    font-size: g.font-size('md');
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    margin-top: g.spacing('4xs');
+    font-size: g.font-size('sm');
+  }
+
+  &__info {
+    font-size: g.font-size('xxs');
+    margin-top: g.spacing('4xs');
+    display: flex;
+    flex-direction: row;
+    color: #4D4D4D;
+
+    span {
+      margin-left: g.spacing('3xs');
+    }
+  }
+
+  &__read-more {
+    margin-left: g.spacing('3xs');
+    text-decoration: underline;
+  }
+}

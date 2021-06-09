@@ -1,0 +1,19 @@
+﻿@function z-index($_key) {
+  $z-index-map: (
+          'background': -1,
+          'base': 0,
+          'content': 1,
+          'emphasized': 5,
+          'modal': 10,
+          'prompt': 50,
+  );
+
+  $_known-keys: 'background', 'base', 'content', 'emphasized', 'modal', 'prompt';
+
+  @if not index($_known-keys, $_key) {
+    @error format-error-message($_key, 'z-index()', $_known-keys);
+    @return null;
+  }
+
+  @return map-get($z-index-map, $_key);
+}

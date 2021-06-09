@@ -1,0 +1,106 @@
+﻿.header {
+  background-color: #ffffff;
+  height: g.height('header');
+  z-index: g.z-index('emphasized');
+  display: flex;
+  flex-direction: column;
+
+  &__notification-container {
+    width: 100%;
+    background-color: g.$color-primary;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__notification-text-container {
+    height: 1.2rem;
+    width: 75rem;
+  }
+
+  &__notification-text {
+    margin-left: g.spacing('md');
+    color: #f1f1f1;
+    font-size: g.font-size('xxs');
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  &__items-container {
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    height: 6rem;
+    width: g.width('web-container');
+  }
+
+  &__logo-container {
+    margin-left: g.spacing('md');
+    max-height: 80px;
+    max-width: 180px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    max-height: 70px;
+    max-width: 180px;
+  }
+
+  &__actions-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    font-family: 'Didact Gothic';
+
+    &:not(:first-child) {
+      margin-left: g.spacing('2xs');
+    }
+  }
+
+  &__action-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: g.height('header');
+    justify-content: center;
+    letter-spacing: 0.15px;
+    line-height: 1.5;
+    transition: g.transition([border-width]);
+    z-index: g.z-index('modal');
+
+    &:not(:first-child) {
+      margin-left: g.spacing('md');
+    }
+
+    &.-active {
+      border-bottom: 1px solid #fff;
+      font-weight: 700;
+    }
+  }
+
+  &__socials-container {
+    margin-left: g.spacing('3xl');
+    margin-right: g.spacing('md');
+
+    a {
+      &:not(:first-child) {
+        margin-left: g.spacing('md');
+      }
+    }
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+  &__separator {
+    border-top: 1px solid #CDCACA;
+  }
+}

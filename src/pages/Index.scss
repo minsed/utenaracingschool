@@ -1,0 +1,92 @@
+.index {
+  background-color: #ffffff;
+  height: 100%;
+  margin-left: g.spacing('md');
+
+  &__top-posts-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__latest-posts {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__top-posts {
+    margin-left: g.spacing('sm');
+  }
+
+  &__vertical-separator {
+    border-left: 1px solid #CDCACA;
+    margin-left: g.spacing('xs');
+  }
+
+  &__calendar {
+    flex: 1;
+    font-size: g.font-size('xs');
+    margin-left: g.spacing('lg');
+  }
+
+  &__title {
+    font-family: 'Didact Gothic';
+    font-weight: 600;
+  }
+
+  &__separator {
+    margin-top: g.spacing('lg');
+    border-top: 1px solid #CDCACA;
+  }
+
+  &__marketing-container {
+    margin-top: g.spacing('sm');
+  }
+
+  &__ads {
+    margin: g.spacing('md') g.spacing('sm');
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__ad {
+
+    &--utena {
+      max-height: 15rem;
+    }
+
+    &--gitana {
+      max-height: 5rem;
+    }
+
+    &--biuro {
+      max-height: 7rem;
+    }
+  }
+
+  &__news-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: g.spacing('lg')
+  }
+
+  &__posts {
+    flex: 3;
+  }
+
+  &__featured-posts {
+    flex: 1;
+    max-height: 30rem;
+    margin-left: g.spacing('lg');
+    background-color: #f4f4f4;
+
+    & > * {
+      margin-top: g.spacing('sm');
+      margin-left: g.spacing('sm');
+    }
+  }
+}

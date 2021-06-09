@@ -1,0 +1,30 @@
+﻿$breakpoint-tablet: 48rem;
+$breakpoint-tablet-landscape: 64rem;
+$breakpoint-laptop: 80rem;
+$breakpoint-desktop: 90rem;
+$color: #F3f3;
+
+@mixin if-tablet {
+  @media screen and (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin if-tablet-landscape {
+  @media screen and (min-width: $breakpoint-tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin if-laptop {
+  @media screen and (min-width: $breakpoint-laptop) {
+    @content;
+  }
+}
+
+@mixin if-desktop {
+  @media screen and (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+

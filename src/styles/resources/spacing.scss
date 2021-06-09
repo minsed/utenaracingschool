@@ -1,0 +1,34 @@
+﻿@function spacing($_key) {
+  $spacing-map: (
+    // 4px
+          '4xs': 0.25rem,
+    // 8px
+          '3xs': 0.5rem,
+    // 10px
+          '2xs': 0.625rem,
+    // 12px
+          'xs': 0.75rem,
+    // 14px
+          'sm': 0.875rem,
+    // 16px
+          'md': 1rem,
+    // 24px
+          'lg': 1.5rem,
+    //32 px
+          'xl': 2rem,
+    // 48px
+          '2xl': 3rem,
+    // 56 px
+          '3xl': 3.5rem,
+    // 96 px
+  );
+
+  $_known-keys: '4xs', '3xs', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl';
+
+  @if not index($_known-keys, $_key) {
+    @error format-error-message($_key, 'spacing()', $_known-keys);
+    @return null;
+  }
+
+  @return map-get($spacing-map, $_key);
+}

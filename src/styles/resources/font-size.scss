@@ -1,0 +1,27 @@
+﻿@function font-size($_key) {
+  $font-size-map: (
+    //12px
+          'xxs': 0.75rem,
+    //14px
+          'xs': 0.875rem,
+    //16px
+          'sm': 1rem,
+    //24px
+          'md': 1.5rem,
+    //32px
+          'lg': 2rem,
+    //48px
+          'xl': 3rem,
+    //56px
+          'xxl': 3.5rem
+  );
+
+  $_known-keys: 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl';
+
+  @if not index($_known-keys, $_key) {
+    @error format-error-message($_key, 'font-size()', $_known-keys);
+    @return null;
+  }
+
+  @return map-get($font-size-map, $_key);
+}

@@ -1,0 +1,16 @@
+@function duration($_key) {
+  $duration-map: (
+          'cta': 0.2s,
+          'fast': 0.4s,
+          'slow': 1.3s,
+  );
+
+  $_known-keys: 'cta', 'fast', 'slow';
+
+  @if not index($_known-keys, $_key) {
+    @error format-error-message($_key, 'duration()', $_known-keys);
+    @return null;
+  }
+
+  @return map-get($duration-map, $_key);
+}
