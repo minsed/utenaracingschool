@@ -13,7 +13,7 @@ const MainLayout: FC<MainLayoutProps> = ({children}: MainLayoutProps) => {
                 <div className={"main-layout__content"}>{children}</div>
             </div>
         </div>
-        <div className={"main-layout__footer"}>Footer</div>
+        <div className={"main-layout__footer"}></div>
     </div>
 }
 

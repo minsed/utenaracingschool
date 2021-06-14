@@ -1,20 +1,26 @@
 import React, {FC} from 'react';
 import './LatestPostPreview.scss';
 import TextButton from "../TextButton";
+import {LatestPostPreviewProps} from "./LatestPostPreview.props";
+import Img from "gatsby-image"
 
-const LatestPostPreview: FC = () => {
+const LatestPostPreview: FC<LatestPostPreviewProps> = ({post}) => {
     return (
         <div className={"latest-post-preview"}>
-            <img className={"latest-post-preview__image"} src={"https://www.mxlarge.com/imager/images/featured/40056/Herlings-face-2021_4d5a97d4c1515dfb6bcf494ff5de83a2.jpg"} />
+            <Img className={"latest-post-preview__image"} fluid={post.image.fluid} />
             <div className={"latest-post-preview__categories"}>
-                <div className={"latest-post-preview__category"}>
-                    <span>MXGP</span>
-                </div>
+                {post.categories.map((category, index) => {
+                    return (
+                        <div key={index} className={"latest-post-preview__category"}>
+                            <span>{category}</span>
+                        </div>
+                    )
+                })}
             </div>
-            <div className={"latest-post-preview__title"}>Jeffrey Herlings nugalėjo Prancūzijos cempionate</div>
-            <div className={"latest-post-preview__subtitle"}>Priešsezoninės varžybos</div>
+            <div className={"latest-post-preview__title"}>{post.title}</div>
+            <div className={"latest-post-preview__subtitle"}>{post.subtitle}</div>
             <div className={"latest-post-preview__info"}>
-                <div className={"latest-post-preview__date"}>Birželio 6, 2021</div>
+                <div className={"latest-post-preview__date"}>{post.publishDate}</div>
                 <span>-</span>
                 <TextButton label={"Skaityti daugiau"} className={"latest-post-preview__read-more"} />
             </div>

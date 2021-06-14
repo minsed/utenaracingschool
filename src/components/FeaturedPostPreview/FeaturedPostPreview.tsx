@@ -1,18 +1,23 @@
 import React, {FC} from 'react';
 import './FeaturedPostPreview.scss'
+import {FeaturedPostPreviewProps} from "./FeaturedPostPreview.props";
 
-const FeaturedPostPreview: FC = () => {
+const FeaturedPostPreview: FC<FeaturedPostPreviewProps> = ({post}) => {
     return (
         <div className={"featured-post-preview"}>
             <div className={"featured-post-preview-container"}>
-                <div className={"featured-post-preview__title"}>Utena Racing School antrajame LT taures etape - antra</div>
+                <div className={"featured-post-preview__title"}>{post.title}</div>
                 <div className={"featured-post-preview__categories"}>
-                    <div className={"featured-post-preview__category"}>
-                        <span>LT</span>
-                    </div>
+                    {post.categories.map((category, index) => {
+                        return (
+                            <div key={index} className={"featured-post-preview__category"}>
+                                <span>{category}</span>
+                            </div>
+                        )
+                    })}
                 </div>
                 <div className={"featured-post-preview__info"}>
-                    <div className={"featured-post-preview__date"}>Birželio 6, 2021</div>
+                    <div className={"featured-post-preview__date"}>{post.publishDate}</div>
                     <span>-</span>
                     <div className={"featured-post-preview__read-more"}>Skaityti daugiau</div>
                 </div>

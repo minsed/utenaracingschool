@@ -1,23 +1,26 @@
 import React, {FC} from 'react';
 import './PostPreview.scss';
+import {PostPreviewProps} from "./PostPreview.props";
+import Img from "gatsby-image";
 
-const PostPreview: FC = () => {
+const PostPreview: FC<PostPreviewProps> = ({post}) => {
     return (
         <div className={"post-preview"}>
-            <img className={"post-preview__image"} src={"https://www.mxlarge.com/imager/images/featured/42194/Thunder-Cianciarulo-2021_4d5a97d4c1515dfb6bcf494ff5de83a2.jpg"}></img>
+            <Img className={"post-preview__image"} fluid={post.image.fluid} />
             <div className={"post-preview__container"}>
-                <div className={"post-preview__title"}>Adam Cianciarulo pratęs sutartį su Monster Energy Kawasaki komanda</div>
-                <div className={"post-preview__subtitle"}>Priešsezoninės varžybos</div>
+                <div className={"post-preview__title"}>{post.title}</div>
+                <div className={"post-preview__subtitle"}>{post.subtitle}</div>
                 <div className={"post-preview__categories"}>
-                    <div className={"post-preview__category"}>
-                        <span>AMA</span>
-                    </div>
-                    <div className={"post-preview__category"}>
-                        <span>SX</span>
-                    </div>
+                    {post.categories.map((category, index) => {
+                        return (
+                            <div key={index} className={"post-preview__category"}>
+                                <span>{category}</span>
+                            </div>
+                        )
+                    })}
                 </div>
                 <div className={"post-preview__info"}>
-                    <div className={"post-preview__date"}>Birželio 6, 2021</div>
+                    <div className={"post-preview__date"}>{post.publishDate}</div>
                     <span>-</span>
                     <div className={"post-preview__read-more"}>Skaityti daugiau</div>
                 </div>
